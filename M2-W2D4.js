@@ -52,13 +52,13 @@ for (let i = 0; i < prices.length; i++) {
 
 // controllo se l'utente che sta effettuando l'acquisto è un ambassador. Se lo è, applico il 30% di sconto al carrello
 if (utenteCheEffettuaLAcquisto.isAmbassador) {
-  carrello = carrello * 0.7
+  carrello *= 0.7
 }
 
 /* controllo se la somma del carrello è minore o uguale a 100. Se lo è applico i costi di spedizione alla variabile "prezzoTotale" e stampo il valore che serve per avere la spedizione gratis,
 altrimenti il prezzo totale resta uguale al prezzo del carrello */
 let prezzoTotale = 0
-if (carrello <= 100) {
+if (carrello < 100) {
   prezzoTotale = carrello + shippingCost
   console.log("Il valore del carrello è di " + parseFloat(carrello).toFixed(2) + "€!")
   console.log("Mancano " + parseFloat(100 - carrello).toFixed(2) + "€ per avere la spedizione gratuita!");
